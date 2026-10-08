@@ -15,7 +15,8 @@ class Subjects extends Model
         'subject'
     ];
 
-    public function users(){
-        return;// リレーションの定義
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'subject_users', 'user_id', 'subject_id')->withTimestamps();// リレーションの定義
     }
 }
